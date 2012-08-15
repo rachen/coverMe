@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>{% block title %}Owe Me{% endblock %}</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='/static_media/css/base.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <!-- Pull out to header in the future -->
+    <a href="/"><h1>Owe Me</h1></a>
+    {% if user.is_anonymous %}
+        <a href="{% url login %}">Login</a> |
+        <a href="{% url register %}">Register</a>
+    {% else %}
+        Logged in as {{ user }} |
+        <a href="{% url logout %}">Logout</a>
+    {% endif %}
+    <br /><br/>
+    {% block content %}{% endblock %}
+</body>
+</html>
