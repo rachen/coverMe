@@ -1,10 +1,10 @@
-# Django settings for oweMe project.
+# Django settings for coverMe project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Raymond', 'rchen009@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'owe_me',                      # Or path to database file if using sqlite3.
+        'NAME': 'cover_me',                      # Or path to database file if using sqlite3.
         'USER': 'raymond',                      # Not used with sqlite3.
         'PASSWORD': '1',                  # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -68,6 +68,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    "/Users/raymond/Programming/coverMe/static",
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -101,17 +102,19 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'oweMe.urls'
+ROOT_URLCONF = 'coverMe.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'oweMe.wsgi.application'
+WSGI_APPLICATION = 'coverMe.wsgi.application'
 
 TEMPLATE_DIRS = (
-    "/Users/raymond/Programming/oweMeProject/templates"
+    "/Users/raymond/Programming/coverMe/templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+
+AUTH_PROFILE_MODULE = 'coverMe.UserProfile'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
