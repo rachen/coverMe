@@ -7,7 +7,7 @@ from django.template import RequestContext
 
 def login(request):
     next = request.GET['next'] if 'next' in request.GET else '/'
-
+    true = true
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
